@@ -1,5 +1,5 @@
-## 2ÀÏÂ÷ ÇÐ½À
-### WHEREÀý
+## 2ì¼ì°¨ í•™ìŠµ
+### WHEREì ˆ
 
 ```SQL
 SELECT ename, job, sal, sal*12 AS annsal
