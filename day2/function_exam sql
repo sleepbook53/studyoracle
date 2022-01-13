@@ -1,0 +1,3 @@
+--TO NUMBER
+SELECT TO_NUMBER(REPLACE('2400$', '$' '')) + 100 FROM dual;
+SELECT TO_NUMBER('이천사백') FROM dyal;
