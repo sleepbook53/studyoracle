@@ -60,7 +60,7 @@ SELECT e. empno
   --- 기준점보다 데이터가 많으면 기준점 만큼만 도출
   --- 기준점보다 데이터가 적으면 NULL값으로 도출
   
-  -- 오라클만의 OUTTER JOIN 문법
+  -- 오라클만의 OUTTER JOIN 문법((+) 사용)
   SELECT e. empno
      , e. ename
      , e. job
@@ -71,29 +71,13 @@ SELECT e. empno
   WHERE e. deptno = d. deptno(+); --PLSQL LEFT OUTER JOIN
   ---WHERE e. deptno(+) = d. deptno); --PLSQL RIGHT OUTER JOIN
   
-  --3개 테이블 INNER JOIN
+  --
    SELECT e. empno
      , e. ename
      , e. job
      , TO_CHAR(e.hiredate, 'yyyy-mm-dd') hiredate
      , e. deptno
      , d. dname
-     , b. comm
-  FROM emp e, dept d, bonus b
-  WHERE e. deptno = d. deptno
-  AND e.ename = b. ename;
-  
-  ----3개 테이블 OUTER JOIN
-   SELECT e. empno
-     , e. ename
-     , e. job
-     , TO_CHAR(e.hiredate, 'yyyy-mm-dd') hiredate
-     , e. deptno
-     , d. dname
-     , b. comm
-  FROM emp e, dept d, bonus b
-  WHERE e. deptno(+) = d. deptno
-  AND e. ename = b. ename(+);
-  
-  
-  
+  FROM emp e, dept d
+  WHERE e. deptno = d. deptno(+); --PLSQL LEFT OUTER JOIN
+  ---WHERE e. deptno(+) = d. deptno); --PLSQL RIGHT OUTER JOIN

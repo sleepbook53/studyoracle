@@ -71,7 +71,7 @@ SELECT ROWNUM
       , su.ename
       , su.job
       , su.sal
-      , su.comm
+      , su comm
   FROM 
 (SELECT ename
       , job
